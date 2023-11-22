@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PrestationController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,6 @@ Route::get('/prestation/{id}/modifier', [PrestationController::class,'edit']);
 Route::post('/prestation/{id}/modifier', [PrestationController::class,'update']);
 Route::get('/prestation/{id}/supprimer', [PrestationController::class,'destroy']);
 
-// Route::get('/login', [LoginController::class,'login'])->name('login');
-// Route::post('/login', [LoginController::class,'authenticate']);
-// Route::get('/logout', [LoginController::class,'logout']);
+Route::get('/login', [LoginController::class,'login'])->name('login');
+Route::post('/login', [LoginController::class,'authenticate']);
+Route::get('/logout', [LoginController::class,'logout']);
